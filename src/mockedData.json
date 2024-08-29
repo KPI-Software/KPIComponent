@@ -1,0 +1,64 @@
+{
+  "owner": "YourName",
+  "modelName": "YourComponent1",
+  "name": "YourComponent",
+  "styles": {
+    "gap": 1,
+    "skin": {
+      "1": {
+        "fontColor": "0000",
+        "backgroundColor": "FFFF"
+      },
+      "2": {
+        "fontColor": "0000",
+        "backgroundColor": "FFFF"
+      }
+    }
+  },
+  "propriety": {
+    "model": {
+      "DesMod": "[Regra]",
+      "PosX": 0,
+      "PosY": 20,
+      "PosW": 500,
+      "PosH": 220,
+      "AlComponente": 5,
+      "AlHorizontal": 2,
+      "Dimensionavel": true,
+      "CorDashboard": 1,
+      "FontStyle": "[fsBold]",
+      "FontSize": 70,
+      "FontName": "Tahoma",
+      "FontColor": "000000",
+      "FundoTransparente": true,
+      "FundoCor": "808080"
+    },
+    "indicator": {
+      "NomMod": "KPILabelRegra",
+      "NomCmp": "KPILabelRegra1",
+      "Propriedades": {
+        "ForInd": "RESVLR(TABELA(#21);Data)|COUNT(#47)",
+        "Cores": [],
+        "Piscar": ""
+      }
+    }
+  },
+  "values": {
+    "calculated": {
+      "NomCmp": "KPILabelRegra1",
+      "ForInd": "8\/29\/2024 1:47:09 PM|18",
+      "Piscar": "",
+      "Colorir": "",
+      "TabInd": null
+    },
+    "component": {
+      "NomMod": "KPILabelRegra",
+      "NomCmp": "KPILabelRegra1",
+      "Propriedades": {
+        "ForInd": "RESVLR(TABELA(#21);Data)|COUNT(#47)",
+        "Cores": [],
+        "Piscar": ""
+      }
+    }
+  }
+}

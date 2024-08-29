@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Construtor de Componente KPI Software Web
 
-## Getting Started
+Este repositório contém um construtor de componente da KPI Software Web, desenvolvido com NextJS. O componente é projetado para exibir indicadores-chave de desempenho em uma interface de usuário de forma clara e intuitiva.
 
-First, run the development server:
+## Estrutura do Projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+O projeto está estruturado da seguinte forma:
+
+
+### `src/components/Model/index.tsx`
+
+O componente `Model` é o pai do seu componente, ele vai ser responsavel por encapsular o seu componente. Nesse caso, as dimensões do seu componente devem se comportar de acordo com as dimensões do `Model`
+
+### `src/components/YourComponent/index.tsx`
+
+O componente `YourComponent` é o seu componente! Fique a vontade de colocar qualquer nome! O seu componente vai receber os dados, via props, e com eles, você criará o seu componente.
+
+# ⚠️ **Importante!!**
+
+Você deve **configurar um ecossistema** dentro da pasta do seu componente, incluindo a criação de **hooks**, **contextos**, **utilitários** e outros elementos necessários. Manter essa estrutura é essencial para garantir a **organização** e a **consistência** do projeto.
+
+**Qualquer tentativa de criar essas separações em diretórios diferentes será desconsiderada.**
+
+Por favor, siga essas diretrizes para evitar problemas e garantir que o projeto permaneça bem estruturado.
+
+
+### `src/types/KPIComponent.ts`
+
+A interface `IKPIComponent` é a interface padrão de cada componente do KPI Software Web. Cada componente vai receber as seguintes propriedades. Para mais detalhes de qual é a funcionalidade de cada campo, acesse o arquivo `src/types/KPIComponent.ts`.
+
+```typescript
+export interface IKPIComponent<M = any, I = any, CL = any, CM = any> {
+  owner: string;
+  modelName: string;
+  name: string;
+  styles: {
+    gap: number;
+    skin: Record<number, { fontColor: string; backgroundColor: string }>;
+  };
+  propriety: {
+    model: M;
+    indicator: I;
+  };
+  values: {
+    calculated: CL;
+    component: CM;
+  };
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### `src/manifest.json`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+O arquivo `manifest.json` contém informações sobre o seu componente KPI, como a configuração, metadados e outros parâmetros que definem como o componente deve ser exibido e utilizado.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Exemplo de `manifest.json`:**
 
-## Learn More
+```json
+{
+  "name": "Nome do seu componente",
+  "owner": "O seu nome",
+  "version": "A versão do seu componente",
+  "path": "Qual é o nome da pasta do seu componente"
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+### `src/mockedData.json`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O arquivo `mockedData.json` contém dados de exemplo para testar e configurar o componente KPI. Ele define várias propriedades relacionadas ao componente, incluindo informações sobre o proprietário, o nome do modelo, estilos e valores. O JSON segue o padrão da interface IKPIComponente.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Duvidas?
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Entre em contato com o suporte: contato@kpisoftware.com.br.
